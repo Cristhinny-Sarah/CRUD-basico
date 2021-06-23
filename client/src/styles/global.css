@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+:root {
+  --white: #FFF;
+
+  --gray-hover: #F5F5F5;
+  --gray-details: #E0E0E0;
+  --gray-icons: #707070;
+  --gray-light-text: #212121;
+  --gray-dark-text: #202020;
+
+  --blue: #1976D2;
+  
+  --green: #35DCA1;
+  
+  --black: #000;
+}
+
+@media (max-width: 1080px) {
+  html {
+    font-size: 93.75%;
+  }
+}
+
+@media (max-width: 720px) {
+  html {
+    font-size: 87.5%;
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  padding-left: 18rem;
+}
