@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReactComponent as HomeImg } from '../assets/paginaInicial.svg';
+import { ReactComponent as HomeImg } from '../assets/logo-home.svg';
 import styles from './styles.module.css';
 
 export default function Home(){
