@@ -4,9 +4,14 @@ import { useState, useEffect } from 'react';
 import styles from './styles.module.css';
 import { format, parseISO } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
+
 import { ReactComponent as IconePlus } from '../../assets/plusIcon.svg'
 import { ReactComponent as IconeDelete } from '../../assets/deleteIcon.svg'
 import { ReactComponent as IconePincel } from '../../assets/pencilIcon.svg'
+
+import CreateProduct from './CreateProduct';
+import DeleteProduct from './DeleteProduct';
+import UpdateProduct from './UpdateProduct';
 
 export default function GetAllProducts(){
   const [products,setProducts] = useState([]);

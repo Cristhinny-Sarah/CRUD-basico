@@ -14,7 +14,14 @@ DataSchema.pre('save', function(next){
   if(!this.isModified("senha_usuario")){
     return next();
   }
-  this.senha_usuario = bcrypt.hashSync(this.senha_usuario, 10);
+  /* this.senha_usuario = bcrypt.hashSync(this.senha_usuario, 10); */
+  const saltRounds = 10;
+  bcrypt.genSalt(saltRounds, function(err, salt) {
+    bcrypt.hash(this.senha_usuario, salt, function(err, hash) {
+      this.senha_usuario = hash;
+     });
+  });
+
   next();
 });
 
@@ -22,6 +29,12 @@ DataSchema.pre('findOneAndUpdate', function(next){
   var password = this.getUpdate().senha_usuario+'';
   if(password.length < 55){
     this.getUpdate().senha_usuario = bcrypt.hashSync(password, 10);
+    /* const saltRounds = 10;
+    bcrypt.genSalt(saltRounds, function(err, salt) {
+      bcrypt.hash(this.senha_usuario, salt, function(err, hash) {
+        this.getUpdate().senha_usuario = hash;
+      });
+    }); */
   }
   next();
 })
