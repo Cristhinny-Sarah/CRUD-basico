@@ -95,7 +95,7 @@ export default function GetAllUsers(){
                   <td>
                     <button onClick={() => {
                       set_id(user._id);
-                      /* console.log(_id); */
+                      
                       openAtualizarUsuarioModal();
                     }}>
                       <IconePincel />
@@ -107,7 +107,7 @@ export default function GetAllUsers(){
                       setUserName(user.nome_usuario);
                       setUserEmail(user.email_usuario);
                       setUserCreationDate(user.createdAt);
-                      /* console.log(userTeste); */
+                      
                       openDeletarUsuarioModal();
                     }}>
                       <IconeDelete />

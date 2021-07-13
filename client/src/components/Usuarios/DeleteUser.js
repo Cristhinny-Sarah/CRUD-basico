@@ -10,7 +10,7 @@ export default function DeleteUser({isDeletarUsuarioModalOpen, setIsDeletarUsuar
     await fetch(`http://localhost:5000/api/usuarios/${_id}`, {
       method: 'DELETE'
     }).then(() => {
-        console.log('usuario deletado!');
+        /* console.log('usuario deletado!'); */
         if(Notification.permission === 'granted'){
           new Notification('Usuário excluido com sucesso!');
         }

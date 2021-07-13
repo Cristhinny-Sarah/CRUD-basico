@@ -5,7 +5,7 @@ import { ReactComponent as IconeFechar } from '../../assets/close-icon.svg';
 import Input from '../Form/Input';
 import Button from '../Form/Button';
 
-export default function UpdateUser({isAtualizarUsuarioModalOpen, setIsAtualizarUsuarioModalOpen, _id}){
+export default function UpdateUser({ isAtualizarUsuarioModalOpen, setIsAtualizarUsuarioModalOpen, _id }){
   const [nome_usuario, setNome_usuario] = useState('');
   const [email_usuario, setEmail_usuario] = useState('');
   const [senha_usuario, setSenha_usuario] = useState('');
@@ -41,7 +41,7 @@ export default function UpdateUser({isAtualizarUsuarioModalOpen, setIsAtualizarU
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(usuario)
-    }).then(()=>{
+    }).then(() => {
         console.log('dados atualizados!');
         if(Notification.permission === 'granted'){
           new Notification('Usuário atualizado com sucesso!');
@@ -62,21 +62,20 @@ export default function UpdateUser({isAtualizarUsuarioModalOpen, setIsAtualizarU
     <div>
       {isAtualizarUsuarioModalOpen ? (
         <div className={styles.criarModal} isAtualizarUsuarioModalOpen={isAtualizarUsuarioModalOpen} >
-          
-        <h1>Atualizar dados</h1>
+          <h1>Atualizar dados</h1>
 
-        <form 
-          className={styles.criarModalForm} 
-          onSubmit={handleSubmit}
-        >
-          <Input
-            label="Nome do usuário" 
-            type="text" 
-            name="nome_usuario" 
-            value={nome_usuario}
-            onChange={ (event) => setNome_usuario(event.target.value) }
-          />
-          <Input 
+          <form 
+            className={styles.criarModalForm} 
+            onSubmit={handleSubmit}
+          >
+            <Input
+              label="Nome do usuário" 
+              type="text" 
+              name="nome_usuario" 
+              value={nome_usuario}
+              onChange={ (event) => setNome_usuario(event.target.value) }
+            />
+            <Input 
               label="Email" 
               type="email" 
               name="email_usuario" 
@@ -98,12 +97,12 @@ export default function UpdateUser({isAtualizarUsuarioModalOpen, setIsAtualizarU
               value={senha_usuario}
               onChange={ (event) => setSenha_usuario(event.target.value) } 
             /> 
-          <Button>Salvar alterações</Button>
-        </form>
+            <Button>Salvar alterações</Button>
+          </form>
 
-        <button  className={styles.criarModalCloseButton} onClick={() => {setIsAtualizarUsuarioModalOpen(false)}}>
-          <IconeFechar />
-        </button>
+          <button  className={styles.criarModalCloseButton} onClick={() => {setIsAtualizarUsuarioModalOpen(false)}}>
+            <IconeFechar />
+          </button>
         </div>
       ) : null}
     </div>

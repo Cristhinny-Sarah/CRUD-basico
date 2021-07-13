@@ -24,7 +24,7 @@ export default function CreateUser({isCriarUsuarioModalOpen, setIsCriarUsuarioMo
       },
       body: JSON.stringify(usuario)
     }).then(()=>{
-        console.log('usuario criado!');
+        /* console.log('usuario criado!'); */
         if(Notification.permission === 'granted'){
           new Notification('Usuário criado com sucesso!');
         }
