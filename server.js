@@ -7,18 +7,17 @@ const routes = require('./src/routes');
 
 const app = express();
 const port = process.env.PORT || 5000;
-
-mongoose.connect('mongodb://localhost:27017/curso-mern', {
+const mongoDBurl = 'mongodb+srv://user-cris:Bora12Codar@cluster0.xhk8t.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+/* mongoose.connect('mongodb://localhost:27017/curso-mern', { */
+mongoose.connect(mongoDBurl, {
   useUnifiedTopology: true,
   useNewUrlParser: true,
   useFindAndModify: false
-}, function(err){
-  if(err){
-    console.error(err);
-  } else {
-    console.log('MongoDB Conectado com Sucesso!');
-  }
 });
+
+mongoose.connection.on('connected', () => {
+  console.log('MongoDB conectado com sucesso!');
+})
 
 app.use(cors());
 
