@@ -7,7 +7,7 @@ const routes = require('./src/routes');
 
 const app = express();
 const port = process.env.PORT || 5000;
-const mongoDBurl = 'mongodb+srv://user-cris:Bora12Codar@cluster0.xhk8t.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const mongoDBurl = 'mongodb+srv://user-cris:Bora12Codar@cluster0.xhk8t.mongodb.net/curso-mern?retryWrites=true&w=majority';
 /* mongoose.connect('mongodb://localhost:27017/curso-mern', { */
 mongoose.connect(mongoDBurl, {
   useUnifiedTopology: true,
