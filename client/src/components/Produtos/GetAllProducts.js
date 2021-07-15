@@ -46,7 +46,7 @@ export default function GetAllProducts(){
   }
 
   useEffect(() => {
-    fetch(`${url}/produtos`)
+    fetch(`${url}produtos`)
       .then((response) => {
         /* console.log(response); */
         return response.json();

@@ -44,7 +44,7 @@ export default function GetAllUsers(){
   }
 
   useEffect(() => {
-    fetch(`${url}/usuarios`)
+    fetch(`${url}usuarios`)
       .then((response) => {
         /* console.log(response); */
         return response.json();
