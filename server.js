@@ -7,9 +7,9 @@ const routes = require('./src/routes');
 
 const app = express();
 const port = process.env.PORT || 5000;
-const mongoDBurl = 'mongodb+srv://user-cris:Bora12Codar@cluster0.xhk8t.mongodb.net/curso-mern?retryWrites=true&w=majority';
-/* mongoose.connect('mongodb://localhost:27017/curso-mern', { */
-mongoose.connect(mongoDBurl, {
+const MONGO_URL = process.env.MONGO_URL;
+
+mongoose.connect(MONGO_URL, {
   useUnifiedTopology: true,
   useNewUrlParser: true,
   useFindAndModify: false
@@ -18,6 +18,10 @@ mongoose.connect(mongoDBurl, {
 mongoose.connection.on('connected', () => {
   console.log('MongoDB conectado com sucesso!');
 })
+
+if(process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+}
 
 app.use(cors());
 
