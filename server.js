@@ -4,14 +4,15 @@ const cors = require('cors');
 const path = require('path');
 const mongoose = require('mongoose');
 const routes = require('./src/routes');
+require('dotenv/config');
 
 const app = express();
 const port = process.env.PORT || 5000;
 const MONGO_URL = process.env.MONGO_URL;
 
 mongoose.connect(MONGO_URL, {
-  useUnifiedTopology: true,
   useNewUrlParser: true,
+  useUnifiedTopology: true,
   useFindAndModify: false
 });
 
