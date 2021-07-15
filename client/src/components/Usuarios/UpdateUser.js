@@ -15,7 +15,7 @@ export default function UpdateUser({ isAtualizarUsuarioModalOpen, setIsAtualizar
   useEffect(() => {
     (
       async () => {
-        await fetch(`${url}/usuarios.details/${_id}`)
+        await fetch(`${url}api/usuarios.details/${_id}`)
           .then((response) => {
             /* console.log(response); */
             return response.json();
@@ -36,7 +36,7 @@ export default function UpdateUser({ isAtualizarUsuarioModalOpen, setIsAtualizar
 
     const usuario = { _id, nome_usuario, senha_usuario, email_usuario, tipo_usuario };
 
-    await fetch(`${url}/usuarios`, { 
+    await fetch(`${url}api/usuarios`, { 
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'

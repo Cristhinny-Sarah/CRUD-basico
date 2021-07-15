@@ -8,7 +8,7 @@ import { ReactComponent as IconeFechar } from '../../assets/close-icon.svg';
 export default function DeleteProduct({isDeletarProdutoModalOpen, setIsDeletarProdutoModalOpen, _id, productName, productDescription, productQuantity, productValue, productCreationDate}){
   
   async function handleSubmit(){
-    await fetch(`${url}/produtos/${_id}`, {
+    await fetch(`${url}api/produtos/${_id}`, {
       method: 'DELETE'
     }).then(() => {
         /* console.log('produto deletado!'); */

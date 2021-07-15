@@ -17,7 +17,7 @@ export default function CreateProduct({isCriarProdutoModalOpen, setIsCriarProdut
 
     const produto = { nome_produto, descricao_produto, preco_produto, qtd_produto };
 
-    await fetch(`${url}/produtos`, { 
+    await fetch(`${url}api/produtos`, { 
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

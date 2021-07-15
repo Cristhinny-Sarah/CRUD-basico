@@ -8,7 +8,7 @@ import { ReactComponent as IconeFechar } from '../../assets/close-icon.svg';
 export default function DeleteUser({isDeletarUsuarioModalOpen, setIsDeletarUsuarioModalOpen, _id, userName, userEmail, userCreationDate}){
   
   async function handleSubmit(){
-    await fetch(`${url}/usuarios/${_id}`, {
+    await fetch(`${url}api/usuarios/${_id}`, {
       method: 'DELETE'
     }).then(() => {
         /* console.log('usuario deletado!'); */

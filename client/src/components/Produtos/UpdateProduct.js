@@ -15,7 +15,7 @@ export default function UpdateProduct({ isAtualizarProdutoModalOpen, setIsAtuali
   useEffect(() => {
     (
       async () => {
-        await fetch(`${url}/produtos.details/${_id}`)
+        await fetch(`${url}api/produtos.details/${_id}`)
           .then((response) => {
             /* console.log(response); */
             return response.json();
@@ -36,7 +36,7 @@ export default function UpdateProduct({ isAtualizarProdutoModalOpen, setIsAtuali
 
     const produto = { _id, nome_produto, descricao_produto, qtd_produto, preco_produto };
 
-    await fetch(`${url}/produtos`, { 
+    await fetch(`${url}api/produtos`, { 
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'

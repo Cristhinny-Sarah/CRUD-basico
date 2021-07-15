@@ -17,7 +17,7 @@ export default function CreateUser({isCriarUsuarioModalOpen, setIsCriarUsuarioMo
 
     const usuario = { nome_usuario, senha_usuario, email_usuario, tipo_usuario };
 
-    await fetch(`${url}/usuarios`, { 
+    await fetch(`${url}api/usuarios`, { 
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
