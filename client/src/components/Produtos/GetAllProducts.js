@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import styles from './styles.module.css';
 import { format, parseISO } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
-import url from '../../../../config/api';
+import url from '../../config/api';
 
 import { ReactComponent as IconePlus } from '../../assets/plusIcon.svg'
 import { ReactComponent as IconeDelete } from '../../assets/deleteIcon.svg'

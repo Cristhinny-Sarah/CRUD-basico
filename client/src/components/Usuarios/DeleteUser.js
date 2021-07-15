@@ -1,13 +1,14 @@
 import styles from './styles.module.css';
 import { format, parseISO } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
+import url from '../../config/api';
 
 import { ReactComponent as IconeFechar } from '../../assets/close-icon.svg';
 
 export default function DeleteUser({isDeletarUsuarioModalOpen, setIsDeletarUsuarioModalOpen, _id, userName, userEmail, userCreationDate}){
   
   async function handleSubmit(){
-    await fetch(`http://localhost:5000/api/usuarios/${_id}`, {
+    await fetch(`${url}/usuarios/${_id}`, {
       method: 'DELETE'
     }).then(() => {
         /* console.log('usuario deletado!'); */

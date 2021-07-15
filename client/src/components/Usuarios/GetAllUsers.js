@@ -3,6 +3,7 @@ import styles from './styles.module.css';
 import { useState, useEffect } from 'react';
 import { format, parseISO } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
+import url from '../../config/api';
 
 import { ReactComponent as IconePlus } from '../../assets/plusIcon.svg';
 import { ReactComponent as IconeDelete } from '../../assets/deleteIcon.svg';
@@ -43,7 +44,7 @@ export default function GetAllUsers(){
   }
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/usuarios')
+    fetch(`${url}/usuarios`)
       .then((response) => {
         /* console.log(response); */
         return response.json();

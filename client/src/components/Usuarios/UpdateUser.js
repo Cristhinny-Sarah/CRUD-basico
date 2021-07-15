@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import styles from './styles.module.css';
+import url from '../../config/api';
 
 import { ReactComponent as IconeFechar } from '../../assets/close-icon.svg';
 import Input from '../Form/Input';
@@ -14,7 +15,7 @@ export default function UpdateUser({ isAtualizarUsuarioModalOpen, setIsAtualizar
   useEffect(() => {
     (
       async () => {
-        await fetch(`http://localhost:5000/api/usuarios.details/${_id}`)
+        await fetch(`${url}/usuarios.details/${_id}`)
           .then((response) => {
             /* console.log(response); */
             return response.json();
@@ -35,7 +36,7 @@ export default function UpdateUser({ isAtualizarUsuarioModalOpen, setIsAtualizar
 
     const usuario = { _id, nome_usuario, senha_usuario, email_usuario, tipo_usuario };
 
-    await fetch('http://localhost:5000/api/usuarios', { 
+    await fetch(`${url}/usuarios`, { 
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'

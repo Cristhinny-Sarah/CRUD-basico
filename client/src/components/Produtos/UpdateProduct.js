@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import styles from './styles.module.css';
+import url from '../../config/api';
 
 import { ReactComponent as IconeFechar } from '../../assets/close-icon.svg';
 import Input from '../Form/Input';
@@ -14,7 +15,7 @@ export default function UpdateProduct({ isAtualizarProdutoModalOpen, setIsAtuali
   useEffect(() => {
     (
       async () => {
-        await fetch(`http://localhost:5000/api/produtos.details/${_id}`)
+        await fetch(`${url}/produtos.details/${_id}`)
           .then((response) => {
             /* console.log(response); */
             return response.json();
@@ -35,7 +36,7 @@ export default function UpdateProduct({ isAtualizarProdutoModalOpen, setIsAtuali
 
     const produto = { _id, nome_produto, descricao_produto, qtd_produto, preco_produto };
 
-    await fetch('http://localhost:5000/api/produtos', { 
+    await fetch(`${url}/produtos`, { 
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'

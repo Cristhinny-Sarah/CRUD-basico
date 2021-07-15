@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import styles from './styles.module.css';
+import url from '../../config/api';
 
 import { ReactComponent as IconeFechar } from '../../assets/close-icon.svg';
 import Input from '../Form/Input';
 import Button from '../Form/Button';
-
 
 export default function CreateProduct({isCriarProdutoModalOpen, setIsCriarProdutoModalOpen}){
   const [nome_produto, setNome_produto] = useState('');
@@ -17,7 +17,7 @@ export default function CreateProduct({isCriarProdutoModalOpen, setIsCriarProdut
 
     const produto = { nome_produto, descricao_produto, preco_produto, qtd_produto };
 
-    await fetch('http://localhost:5000/api/produtos', { 
+    await fetch(`${url}/produtos`, { 
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

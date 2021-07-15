@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import styles from './styles.module.css';
+import url from '../../config/api';
 
 import { ReactComponent as IconeFechar } from '../../assets/close-icon.svg';
 import Input from '../Form/Input';
 import Button from '../Form/Button';
-
 
 export default function CreateUser({isCriarUsuarioModalOpen, setIsCriarUsuarioModalOpen}){
   const [nome_usuario, setNome_usuario] = useState('');
@@ -17,7 +17,7 @@ export default function CreateUser({isCriarUsuarioModalOpen, setIsCriarUsuarioMo
 
     const usuario = { nome_usuario, senha_usuario, email_usuario, tipo_usuario };
 
-    await fetch('http://localhost:5000/api/usuarios', { 
+    await fetch(`${url}/usuarios`, { 
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
